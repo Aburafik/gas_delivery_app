@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gas_delivery_app/Components/button_component.dart';
 import 'package:gas_delivery_app/Components/common_appBra.dart';
 import 'package:gas_delivery_app/Utils/colors.dart';
+import 'package:gas_delivery_app/Views/home/home_view.dart';
+import 'package:get/get.dart';
 
 class SelectPaymentMethodVC extends StatefulWidget {
   const SelectPaymentMethodVC({super.key});
@@ -55,16 +57,71 @@ class _SelectPaymentMethodVCState extends State<SelectPaymentMethodVC> {
                 });
               },
             ),
-            
-            Spacer(),
+            const Spacer(),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               child: CommonButton(
                 title: "Pay",
-                onPressed: () {},
+                onPressed: () {
+                  Get.defaultDialog(
+                      backgroundColor: AppColors.whiteColor.withOpacity(0.7),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 10),
+                      title: "",
+                      content: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            const CircleAvatar(
+                              radius: 40,
+                              backgroundColor: AppColors.secondaryColor,
+                              child: Icon(Icons.check,
+                                  color: AppColors.whiteColor, size: 50),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              child: Text(
+                                cod
+                                    ? "Order Placed Succesfuly"
+                                    : " Gas Order Succesfuly",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1!
+                                    .copyWith(fontSize: 20),
+                              ),
+                            ),
+                            Text(
+                              cod
+                                  ? "Our Delivey agent will collect the delivery fee in cash before fullfilling your order"
+                                  : "Money will be deducted from your account as soon as you have accepted the delivery ",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline1!
+                                  .copyWith(
+                                    fontSize: 16,
+                                  ),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                      ),
+                      confirm: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: CommonButton(
+                          title: cod ? "OK" : "Confirm",
+                          onPressed: cod
+                              ? () {
+                                  Get.back();
+                                  Get.toNamed(HomeViewNavigation.home,
+                                      id: HomeViewNavigation.id);
+                                }
+                              : () {},
+                        ),
+                      ));
+                },
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
@@ -83,7 +140,7 @@ class PaymentMethodComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 10),
+      contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       tileColor: seletedType ? AppColors.commonColor : AppColors.greyColor,
       leading: Icon(
@@ -93,7 +150,7 @@ class PaymentMethodComponent extends StatelessWidget {
       title: Text(
         title!,
         style: Theme.of(context).textTheme.bodyText1!.copyWith(
-          fontSize: 20,
+            fontSize: 20,
             color: seletedType ? AppColors.whiteColor : AppColors.blackColor),
       ),
       onTap: onTap,

@@ -44,6 +44,7 @@ class _DashBoardViewState extends State<DashBoardView> {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: AppColors.commonColor,
         unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
         currentIndex: _pageIndex,
         onTap: _setPage,
         items: const [
