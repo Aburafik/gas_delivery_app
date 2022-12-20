@@ -22,7 +22,11 @@ class _DashBoardViewState extends State<DashBoardView> {
 
     _pageController = PageController(initialPage: widget.pageIndex!);
 
-    screens = [const HomeViewsWrapper(), const OrdersVC(), const ProlfileVC()];
+    screens = [
+      const HomeViewsWrapper(),
+      const OrdersVC(),
+      const ProfileViewsWrapper()
+    ];
     super.initState();
   }
 
@@ -37,7 +41,7 @@ class _DashBoardViewState extends State<DashBoardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        physics: const NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           controller: _pageController,
           itemCount: screens!.length,
           itemBuilder: ((context, index) => screens![index])),

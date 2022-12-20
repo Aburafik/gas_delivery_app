@@ -9,7 +9,7 @@ class OrdersVC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: commonAppBar(),
+      appBar: commonAppBar(title: "My Orders"),
       body: ListView.builder(
           itemCount: 10,
           itemBuilder: (context, index) {
@@ -33,7 +33,12 @@ class OrdersVC extends StatelessWidget {
                           child: Column(
                             children: [
                               Text("Gas Station",
-                                  style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 20,fontWeight: FontWeight.w400)),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText1!
+                                      .copyWith(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w400)),
                               Text("Delivery Data"),
                             ],
                           ),

@@ -1,13 +1,15 @@
 import 'package:gas_delivery_app/Views/authentication/sign_up.dart';
 import 'package:gas_delivery_app/Views/authentication/verified_phone.dart';
 import 'package:gas_delivery_app/Views/dashboard/dash_board_view.dart';
+import 'package:gas_delivery_app/Views/onboarding/onboarding.dart';
 import 'package:gas_delivery_app/Views/onboarding/splash_view.dart';
 import 'package:gas_delivery_app/Views/payments/select_payment_method.dart';
 import 'package:get/route_manager.dart';
 
 class RouterHelper {
   static const String initialRoute = "/initial";
-  static const String onboarding = "/signUp";
+  static const String onboarding = "/onboarding";
+  static const String signUp = "/signUp";
   static const String phoneverification = "/phoneverification";
   static const String dashboard = "/dashboard";
   static const String home = "/home";
@@ -17,7 +19,8 @@ class RouterHelper {
 
   static List<GetPage> router = [
     GetPage(name: initialRoute, page: () => const SPlashView()),
-    GetPage(name: onboarding, page: () => SignUpVC()),
+    GetPage(name: onboarding, page: () => const OnboardingOverview()),
+    GetPage(name: signUp, page: () => SignUpVC()),
     GetPage(name: onboarding, page: () => SignUpVC()),
     GetPage(name: phoneverification, page: () => const VerifyPhoneVC()),
     GetPage(
@@ -33,7 +36,8 @@ class RouterHelper {
             ),
         children: [
           GetPage(
-              name: selectPaymentMethod, page: () => SelectPaymentMethodVC())
+              name: selectPaymentMethod,
+              page: () => const SelectPaymentMethodVC())
         ]),
   ];
 }

@@ -16,15 +16,13 @@ class _SPlashViewState extends State<SPlashView> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 2), () => Get.toNamed(RouterHelper.onboarding));
+        const Duration(seconds: 4), () => Get.toNamed(RouterHelper.onboarding));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(Images.gas_logo),
-      ),
+      body: Image.asset(Images.splash_logo),
     );
   }
 }

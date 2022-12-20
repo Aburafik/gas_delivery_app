@@ -26,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     if (widget.first) {
       return Scaffold(
-        appBar: commonAppBar(),
+        appBar: commonAppBar(title: "Request Order"),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: ListView(
