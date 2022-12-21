@@ -58,7 +58,6 @@ class _VerifyPhoneVCState extends State<VerifyPhoneVC> {
 
   @override
   Widget build(BuildContext context) {
-    // String phone = Get.arguments['phoneNumber'] ?? "00";
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -69,7 +68,7 @@ class _VerifyPhoneVCState extends State<VerifyPhoneVC> {
               height: MediaQuery.of(context).size.height / 5,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
-                child: Image.asset(Images.gas_logo,height: 50,),
+                child: Image.asset(Images.main_logo,height: 50,),
               ),
             ),
             const SizedBox(height: 8),

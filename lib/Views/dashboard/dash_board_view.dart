@@ -3,6 +3,7 @@ import 'package:gas_delivery_app/Utils/colors.dart';
 import 'package:gas_delivery_app/Views/home/home_view.dart';
 import 'package:gas_delivery_app/Views/orders/orders.dart';
 import 'package:gas_delivery_app/Views/profile/profile.dart';
+import 'package:gas_delivery_app/Views/settings/settings.dart';
 
 class DashBoardView extends StatefulWidget {
   DashBoardView({super.key, this.pageIndex});
@@ -25,7 +26,8 @@ class _DashBoardViewState extends State<DashBoardView> {
     screens = [
       const HomeViewsWrapper(),
       const OrdersVC(),
-      const ProfileViewsWrapper()
+      const ProfileViewsWrapper(),
+      const SetingsVC()
     ];
     super.initState();
   }

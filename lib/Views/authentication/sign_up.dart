@@ -23,8 +23,8 @@ class SignUpVC extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 10,
-                    child: Image.asset(Images.gas_logo),
+                    height: MediaQuery.of(context).size.height / 5,
+                    child: Image.asset(Images.main_logo,),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 30),

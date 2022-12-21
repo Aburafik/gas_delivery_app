@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gas_delivery_app/Utils/colors.dart';
 
 final lightTheme = ThemeData(
+  scaffoldBackgroundColor: AppColors.whiteColor,
   fontFamily: "Roboto",
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.commonColor,
