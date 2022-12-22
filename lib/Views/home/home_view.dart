@@ -31,11 +31,11 @@ class _HomeViewState extends State<HomeView> {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: ListView(
             children: [
-              titleText(context, "Select Pick Location"),
+              titleText(context, "Pickup Address"),
               CommonTextField(),
-              titleText(context, "Select Destionation"),
+              titleText(context, "Drop off Address"),
               CommonTextField(),
-              titleText(context, "Select Cylinder"),
+              titleText(context, "Cylinder Size"),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -54,7 +54,7 @@ class _HomeViewState extends State<HomeView> {
                         )
                         .toList()),
               ),
-              titleText(context, "Select Cylinder"),
+              titleText(context, "Cylinder Type"),
               RadioListTile(
                 value: "Plastic",
                 groupValue: selectedValue,
@@ -75,6 +75,10 @@ class _HomeViewState extends State<HomeView> {
                 },
                 title: const Text("Metal"),
               ),
+              titleText(context, "Reciever Name"),
+              CommonTextField(),
+              titleText(context, "Reciever Phone Number"),
+              CommonTextField(),
               titleText(context, "Any Further Directions (Optional)"),
               CommonTextField(
                 maxLines: 6,

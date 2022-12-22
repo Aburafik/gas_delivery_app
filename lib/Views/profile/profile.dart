@@ -28,6 +28,7 @@ class ProfileVC extends StatelessWidget {
                       children: [
                         Container(),
                         Container(),
+                        
                         Text(
                           "My Profile",
                           style: Theme.of(context)
@@ -57,6 +58,7 @@ class ProfileVC extends StatelessWidget {
                   const SizedBox(height: 10),
                   const Center(
                     child: CircleAvatar(
+
                       radius: 60,
                       backgroundImage: NetworkImage(
                           "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMGltYWdlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"),
@@ -93,7 +95,7 @@ class ProfileVC extends StatelessWidget {
         ),
       );
     } else {
-      return EditProfileVC();
+      return const EditProfileVC();
     }
   }
 }

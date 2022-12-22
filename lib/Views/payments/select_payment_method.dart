@@ -47,7 +47,7 @@ class _SelectPaymentMethodVCState extends State<SelectPaymentMethodVC> {
             ),
             const SizedBox(height: 20),
             PaymentMethodComponent(
-              title: "Mobile Noney",
+              title: "Mobile Money",
               icon: Icons.phone_android_outlined,
               seletedType: momopay,
               onTap: () {
